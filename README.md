@@ -27,7 +27,7 @@ A **Shape** is a term for a collidable area. Circles / Polygons / Lines are supp
 **Body** defines a position/rotation/mass/velocity/e.t.c of objects. 
 
 ###Space
-*Space** is a section of the Chipmunk which simulates physics behaviours. Any **Body** or **Shape** that you want update due to gravity/collide with each other need to be attached to the same space.
+**Space** is a section of the Chipmunk which simulates physics behaviours. Any **Body** or **Shape** that you want update due to gravity/collide with each other need to be attached to the same space.
 
 ##How to Include:  
 
