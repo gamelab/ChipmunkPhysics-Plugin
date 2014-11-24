@@ -135,15 +135,92 @@ State.create = function() {
 		this.game.stage.width - 150, 
 		this.game.stage.height - 100);
 	
+	//Mouse event to enable gravity when the user releases the mouse within the boundaries of the screen.
+	//This event will fire before the 'onUp' event below (due to use setting its priority level higher)
+	// So we can then not enable gravity if the user is dragging an item.
 	this.game.input.onUp.add( function( x, y ) {
 		
-		if( clickBox.contains(x, y) ) {
+		if( !this.mouseJoint && clickBox.contains(x, y) ) {
 			self.space.gravityY = 400;
 		}
 
-	}, this );
+	}, this, 2 );
+	
+	//Add mouse events for press/release. 
+	//These control the dragging of shapes.
+	this.game.input.onUp.add( this.released, this, 1 );
+	this.game.input.onDown.add( this.pressed, this );
 
+	//Variables used to control the dragging of shapes. 
+	this.mouseJoint = null;
+	this.mousePointVector = { x: 0, y: 0 };
+
+	//We don't want the body we use for the mouse to be affected by gravity,
+	// so we will not add it to space.
+	this.mouseBody = new Kiwi.Plugins.ChipmunkPhysics.Body( {
+		i: Infinity,
+		mass: Infinity
+	} ); 
 }
+
+//Fired when the mouse is released.
+//Updates the mouse vector position and removes the mouseJoint if it exists.
+State.released = function(x,y) {
+	this.updateMouseVector();
+	if( this.mouseJoint ) {
+		this.space.removeConstraint(this.mouseJoint);
+		this.mouseJoint = null;		
+	}
+};
+
+//Fired when the mouse is pressed.
+State.pressed = function(x,y) {
+	//Updates the mouse vector position
+	this.updateMouseVector();
+
+	//Query space to see if a shape exists at the location of the mouse
+	var shape = this.space.pointQueryFirst( this.mousePointVector, -1 );
+
+	//If one does 
+	if(shape) {
+		//Get the shapes body
+		var body = shape.body;
+		
+		//Calculate the difference between the mouse position and the bodies centeral point.
+		//We will use this for the anchor position of the pivot joint.
+		var sp = body.world2Local( this.mousePointVector );
+
+		//Create the pivot joint.
+		this.mouseJoint = new Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot({
+			bodyA: this.mouseBody,
+			bodyB: body,
+			anchorB: sp,
+			maxForce: 50000
+		});
+		//Start the simulation.
+		this.space.addConstraint( this.mouseJoint );
+	}
+};
+
+//Updates the mouse point vector to the position of the mouse
+State.updateMouseVector = function() {
+	this.mousePointVector.x = this.game.input.mouse.cursor.point.x;
+	this.mousePointVector.y = this.game.input.mouse.cursor.point.y;
+};
+
+
+//Executed each frame.
+State.update = function() {
+	Kiwi.State.prototype.update.call( this );
+
+	//Update mouse vector
+	this.updateMouseVector();
+
+	//Set the bodies position to the mouse point vector
+	this.mouseBody.x = this.mousePointVector.x;
+	this.mouseBody.y = this.mousePointVector.y;
+
+};
 
 
 //Create the kiwijs gameobjects. 
