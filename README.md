@@ -58,7 +58,7 @@ Be sure to include the `cp.extra.js` file first.
 
 Tell the game to use the plugin. Add the `ChipmunkPhysicsDebug` (the name of the debug plugin) to the plugins section of the game options. Be sure to add it *after* the ChipmunkPhysics plugin.
 
-```
+```javascript
 var game = new Kiwi.Game('domElementId', 'GameName', null, { plugins: ["ChipmunkPhysics", "ChipmunkPhysicsDebug"]});
 ```
 
@@ -83,7 +83,7 @@ Sections covered are listed below:
 ###Using the Debug Plugin
 When you include the ChipmunkPhysicsDebug plugin into a game, that game will have access to a `chipmunkDebug` manager. It is this manager which handles the rendering of shapes/constraints/bodies and initalising the debug overlay.
 
-```
+```javascript
 //Initalises the debug overlay
 this.game.chipmunkDebug.init(); 
 ```
@@ -92,7 +92,7 @@ Executing the `init` method creates the stages debug canvas and starts rendering
 
 The following is a list of rendering options.
 
-```
+```javascript
 this.game.chipmunkDebug.renderConstraints = true;
 this.game.chipmunkDebug.renderBodies  = true;
 this.game.chipmunkDebug.renderShapes = true;
@@ -103,7 +103,7 @@ The physics manager is created and attached to a game at boot time. The manager 
 
 **Update Speed**
 Speed at which all spaces managed by this object are to be updated by each frame.
-```
+```javascript
 this.game.chipmunk.updateSpeed = 1 / 60
 ```
 
@@ -111,13 +111,13 @@ this.game.chipmunk.updateSpeed = 1 / 60
 The default space which is created at boot time. This is the default space which the `ChipmunkPhysic` Components will add the bodies/shapes they create to by default. 
 
 This is also the object you access to change the direction/level of gravity, damping on all velocities, how accurate the physics is, plus much much more. 
-```
+```javascript
 this.game.chipmunk.defaultSpace;
 ```
 
 **Active**
 If the spaces managed by this plugin should update or not. 
-```
+```javascript
 this.game.chipmunk.active = false; 
 ```
 
@@ -126,14 +126,14 @@ this.game.chipmunk.active = false;
 Space is used in chipmunk to contain a singular physics simulation and one is created by default by this plugin at boot time. Bodies, shapes and constraints which you want simulated need to be added to a space in order to function.
 
 **Gravity**
-```
+```javascript
 this.game.chipmunk.defaultSpace.gravityX = 100;
 this.game.chipmunk.defaultSpace.gravityY = 100;
 ```
 
 **Damping**
 Amount of velocity that bodies retain each second. A value of 0.9 means that each bodies velocity will drop by 10%.
-```
+```javascript
 this.game.chipmunk.defaultSpace.damping = 1;
 ```
 
@@ -144,7 +144,7 @@ The easiest way to use Chipmunk Physics with a GameObject is through the `Chipmu
 
 By simply attaching this Component to gameobjects without defining any options will create a Body and a Box Shape based on gameobjects texture atlas and attached them to the default space. 
 
-```
+```javascript
 var gameobject = new Kiwi.GameObjects.StaticImage(this, x, y);
 gameobject.physics = this.components.add( new Kiwi.Plugins.ChipmunkPhysics.Component( this, {} ) );
 ```
@@ -156,7 +156,7 @@ When initially creating the Physics Component you can pass in a Object Literal w
 
 Below is a list of the options you are most likely to want to edit/pass when using the Component.
 
-```
+```javascript
 var config = {
     //Change the space which the body/shapes will be added to.
     //This can be modified if you using multiple spaces in your game.
@@ -312,7 +312,7 @@ var config = {
 
 Bodies and Shapes that have been created will be added to the component under their respective names.
 
-```
+```javascript
 var body = penguin.physics.body;
 var shapes = penguin.physics.shapes;
 ```
@@ -322,7 +322,7 @@ To create a new body for use in Kiwi you can use the `Kiwi.Plugins.ChipmunkPhysi
 
 You can also optionally pass it a transformation that the body should use to position itself by. This is how a body is fixed to a sprites location.
 
-```
+```javascript
 var body = new Kiwi.Plugins.ChipmunkPhysics.Body({
         mass: 100,
         
@@ -334,7 +334,7 @@ var body = new Kiwi.Plugins.ChipmunkPhysics.Body({
 
 Alternatively you can use a few of the static methods to create a body based on information provided. View the `statics.js` file for a full list.
 
-```
+```javascript
     var boxbody = Kiwi.Plugins.ChipmunkPhysics.createBoxBody({
         mass: 100,
         width: 25,
@@ -367,7 +367,7 @@ Alternatively you can use a few of the static methods to create a body based on 
 **Adding to Space**
 If a body is to take into account gravity and have a velocity of its own, then you need to add it to a space.
 
-```
+```javascript
 this.game.chipmunk.defaultSpace.addBody( body );
 ```
 
@@ -375,14 +375,14 @@ this.game.chipmunk.defaultSpace.addBody( body );
 You move a body in a number of ways. 
 
 One way is to set the velocity of a body. One way is to use the `setVel` method.
-```
+```javascript
 var x = 100;
 var y = 0;
 body.setVel( x, y );
 ```
 
 Another way is to apply a force to the object. That force will then be constantly applied to the body.
-```
+```javascript
 body.applyForce( 
     //The first parameter is the velocity vector
     {
@@ -411,7 +411,7 @@ Each shape requires that you pass it a body. This will define its location, rota
 If shapes are to collide against other shapes you will need to add them to the same space. This should also be the same space the body is attached to. 
 
 An example of creating a circle shape can be found below. 
-```
+```javascript
 //It is assumed you have created a body above...
 
 var circleshape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle({
@@ -425,7 +425,7 @@ If you are wanting a shape to not move when another shape collides with it (for 
 
 Spaces will have a reference to a `staticBody` you can use for your shapes. Shapes which use the `staticBody` can then be position by changing their offsets.
 
-```
+```javascript
 var circleshape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle({
     body: this.game.chipmunk.space.staticBody,
     radius: 25,
@@ -447,7 +447,7 @@ All avaiable joints can be found under the `Kiwi.Plugins.ChipmunkPhysics.Joints`
 
 Joints need to be added to a space to be simulated just like bodies/shapes. They also required a configuration object defining the two bodies they are joining and more information depending on the type of constraint created. 
 
-```
+```javascript
 var joint = new Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring({
         //First body we are joining
         bodyA: firstBody,
