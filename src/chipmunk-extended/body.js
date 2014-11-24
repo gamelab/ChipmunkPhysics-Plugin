@@ -147,7 +147,6 @@ Kiwi.Plugins.ChipmunkPhysics.Body.prototype.setPos = function( x, y ) {
 };
 
 
-
 /**
 * The location of the body in the world space on the x-axis. 
 * Assigning a value adjusts the transform assigned to position the body at the cooridnates specified.
@@ -174,6 +173,8 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'x', {
 		} else {
 			this.transform.x = val;
 		}
+
+		this.p.x = this.x;
 
 	},
 
@@ -212,6 +213,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'y', {
 			this.transform.y = val;
 		}
 		
+		this.p.y = this.y;
 
 	},
 
@@ -220,7 +222,6 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'y', {
 	configurable: true
 
 });
-
 
 
 /**

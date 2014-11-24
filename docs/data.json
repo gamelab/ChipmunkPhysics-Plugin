@@ -3899,7 +3899,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 151,
+            "line": 150,
             "description": "The location of the body in the world space on the x-axis. \nAssigning a value adjusts the transform assigned to position the body at the cooridnates specified.",
             "itemtype": "property",
             "name": "x",
@@ -3913,7 +3913,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 188,
+            "line": 189,
             "description": "The location of the body in the world space on the y-axis. \nAssigning a value adjusts the transform assigned to position the body at the cooridnates specified.",
             "itemtype": "property",
             "name": "y",
@@ -3927,7 +3927,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 226,
+            "line": 227,
             "description": "Sets the angle (rotation) of the transform attached.\nValue is in worldRotation coordinates.",
             "itemtype": "method",
             "name": "setAngle",
@@ -3947,7 +3947,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 249,
+            "line": 250,
             "description": "The rotation of the body (and thus the transform) in world coordinates.",
             "itemtype": "property",
             "name": "rotation",
@@ -3961,7 +3961,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 273,
+            "line": 274,
             "description": "Returns the worldRotation of a transformation passed.",
             "itemtype": "method",
             "name": "getWorldRotation",
@@ -3986,7 +3986,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 295,
+            "line": 296,
             "description": "The mass of this body.",
             "itemtype": "property",
             "name": "mass",
@@ -4000,7 +4000,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 317,
+            "line": 318,
             "description": "The velocity of this body on the X axis.",
             "itemtype": "property",
             "name": "velocityX",
@@ -4014,7 +4014,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 341,
+            "line": 342,
             "description": "The velocity of this body on the Y axis.",
             "itemtype": "property",
             "name": "velocityY",
@@ -4028,7 +4028,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 364,
+            "line": 365,
             "description": "The angular velocity of this body.",
             "itemtype": "property",
             "name": "angularVelo",
@@ -4042,7 +4042,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 386,
+            "line": 387,
             "description": "The maximum velocity of this object.",
             "itemtype": "property",
             "name": "maxVelocity",
@@ -4057,7 +4057,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 411,
+            "line": 412,
             "description": "The maximum angular velocity of this object.",
             "itemtype": "property",
             "name": "maxAngVelo",
@@ -4072,7 +4072,7 @@
         },
         {
             "file": "src\\chipmunk-extended\\body.js",
-            "line": 436,
+            "line": 437,
             "description": "Overriden version of the function which handles adjusting objects position/rotation after collisions.",
             "itemtype": "method",
             "name": "position_func",

@@ -270,16 +270,17 @@ State.createKiwi = function() {
 		}
 	});
 	
-	this.createObj('controller-2-left', x + 27, y + 112, {
+	
+	this.createObj('controller-2-left', x + 26, y + 112, {
 		type: 'poly',
 		body: {
-			verts: [-10, -30, -65, -10, -60, 30, -30, 40, 0, 20]
+			verts: [25, -30, -30, -10, -25, 30, 5, 40, 35, 20]
 		}
 	}); 
-	this.createObj('controller-2-right', x + 27, y + 112, {
+	this.createObj('controller-2-right', x + 87, y + 112, {
 		type: 'poly',
 		body: {
-			verts: [8, 15, 40, 23, 65, 10, 65, -20, 40, -40, -5, -30]
+			verts: [-22, 15, 10, 23, 35, 10, 35, -20, 10, -40, -35, -30]
 		}
 	});
 	this.createObj('lighting-2-left', x + 105, y + 175, {
