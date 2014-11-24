@@ -1,0 +1,33 @@
+{
+    "name": "ChipmunkPhysics",
+    "version": "0.8.0",
+    "description": "Intergrates the Chipmunk physics system into Kiwi.js.",
+    "author": "GameLab",
+    "logo": "xx",
+
+    "debug": {
+        "name": "ChipmunkPhysicsDebug",
+        "version": "0.8.0",
+        "description": "Allows easier visualisation of the shapes/constraints and bodies to help when debugging and creating physics objects."
+    },
+
+    "homepage": "http://kiwijs.org/",
+    "bugs": "xx",
+    "license": "xx",
+    "licenseUrl": "xx",
+
+    "repository": {
+        "type": "git",
+        "url": "xx"
+    },
+
+    "filenameBase": "chipmunk-physics",
+
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.x",
+        "grunt-contrib-uglify": "0.2.x",
+        "grunt-contrib-yuidoc": "0.4.x",
+        "grunt-contrib-concat" : "latest"
+    }
+}

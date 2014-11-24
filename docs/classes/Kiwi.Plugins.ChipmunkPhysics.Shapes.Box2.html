@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2 - ChipmunkPhysics</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="ChipmunkPhysics"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.8.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/cp.Body.html">cp.Body</a></li>
+            
+                <li><a href="../classes/cp.Constraint.html">cp.Constraint</a></li>
+            
+                <li><a href="../classes/cp.Shape.html">cp.Shape</a></li>
+            
+                <li><a href="../classes/cp.Space.html">cp.Space</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Body.html">Kiwi.Plugins.ChipmunkPhysics.Body</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Component.html">Kiwi.Plugins.ChipmunkPhysics.Component</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring.html">Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring.html">Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Gear.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Gear</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Groove.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Groove</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Pin.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Pin</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit.html">Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor.html">Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Slide.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Slide</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Manager.html">Kiwi.Plugins.ChipmunkPhysics.Manager</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Box.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Box</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Space.html">Kiwi.Plugins.ChipmunkPhysics.Space</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/ChipmunkPhysics.html">ChipmunkPhysics</a></li>
+            
+                <li><a href="../modules/cp.html">cp</a></li>
+            
+                <li><a href="../modules/Joints.html">Joints</a></li>
+            
+                <li><a href="../modules/Plugins.html">Plugins</a></li>
+            
+                <li><a href="../modules/Shapes.html">Shapes</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2 Class</h1>
+<div class="box meta">
+    
+
+    
+        <div class="extends">
+            Extends <a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html" class="crosslink">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a>
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/src_chipmunk-extended_shapes.js.html#l234"><code>src\chipmunk-extended\shapes.js:234</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/Shapes.html">Shapes</a><br>
+            Parent Module: <a href="../modules/ChipmunkPhysics.html">ChipmunkPhysics</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Alternaive way of defining a box shaped collision area.
+Requires a body and a Chipmunk Bounding Box. 
+Extends the Poly shape.
+The bounding box needs to be positioned around the body.</p>
+
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2" class="method item public">
+    <h3 class="name"><code>Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_chipmunk-extended_shapes.js.html#l234"><code>src\chipmunk-extended\shapes.js:234</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Parameters required by this object to function.</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">body</code>
+                                    <span class="type"><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Body.html" class="crosslink">Kiwi.Plugins.ChipmunkPhysics.Body</a></span>
+                                
+
+                                <div class="param-description">
+                                    <p>The body that this shape is attached to.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">box</code>
+                                    <span class="type">Object</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The bounding box (Chipmunks @see cp.BB) of the box.</p>
+
+                                </div>
+
+                                
+                                    <ul class="params-list">
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name">l</code>
+                                                <span class="type">Number</span>
+                                            
+
+                                            <div class="param-description">
+                                                The coordinate of the left most point.
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name">r</code>
+                                                <span class="type">Number</span>
+                                            
+
+                                            <div class="param-description">
+                                                The coordinate of the right most point.
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name">t</code>
+                                                <span class="type">Number</span>
+                                            
+
+                                            <div class="param-description">
+                                                The coordinate of the top most point.
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name">b</code>
+                                                <span class="type">Number</span>
+                                            
+
+                                            <div class="param-description">
+                                                The coordinate of the bottom most point.
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[offset]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The offset of this shape from the body.</p>
+
+                                </div>
+
+                                
+                                    <ul class="params-list">
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name optional">[x=0]</code>
+                                                <span class="type">Number</span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                            
+
+                                            <div class="param-description">
+                                                The offset of this shape on the x-axis.
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="param">
+                                            
+                                                <code class="param-name optional">[y=0]</code>
+                                                <span class="type">Number</span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                                            
+
+                                            <div class="param-description">
+                                                The offset of this shape on the y-axis.
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[elasticity]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Elasticity of the shape.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[friction]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Friction this shape has.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[layers]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The layers that this shape is a part of.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[sensor]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[collisionType]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The collision type of this shape. Used with collision handler methods.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setBody">setBody</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setCollisionType">setCollisionType</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setElasticity">setElasticity</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setFriction">setFriction</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setLayers">setLayers</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setSensor">setSensor</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public inherited">
+                                <a href="#method_setVerts">setVerts</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_bb_b">bb_b</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_bb_l">bb_l</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_bb_r">bb_r</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_bb_t">bb_t</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_body">body</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_collision_type">collision_type</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_e">e</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_group">group</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_layers">layers</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_sensor">sensor</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_space">space</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_surface_v">surface_v</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_type">type</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_u">u</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property public inherited">
+                                <a href="#property_verts">verts</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_setBody" class="method item public inherited">
+    <h3 class="name"><code>setBody</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>body</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setBody">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l151"><code>src\chipmunk-docs\shape.js:151</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the body that this shape is attached to.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">body</code>
+                        <span class="type"><a href="../classes/cp.Body.html" class="crosslink">cp.Body</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setCollisionType" class="method item public inherited">
+    <h3 class="name"><code>setCollisionType</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>collision_type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setCollisionType">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l142"><code>src\chipmunk-docs\shape.js:142</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the collision type of this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">collision_type</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The new collision type of the shape.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setElasticity" class="method item public inherited">
+    <h3 class="name"><code>setElasticity</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>e</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setElasticity">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l106"><code>src\chipmunk-docs\shape.js:106</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the elasiticity of this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">e</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The new elasticity of the shape.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setFriction" class="method item public inherited">
+    <h3 class="name"><code>setFriction</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>u</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setFriction">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l115"><code>src\chipmunk-docs\shape.js:115</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the friction of this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">u</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The new friction of the shape.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setLayers" class="method item public inherited">
+    <h3 class="name"><code>setLayers</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>layers</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setLayers">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l124"><code>src\chipmunk-docs\shape.js:124</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the layers of this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">layers</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The new layers of the shape.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setSensor" class="method item public inherited">
+    <h3 class="name"><code>setSensor</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>sensor</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#method_setSensor">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l133"><code>src\chipmunk-docs\shape.js:133</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the sensor flag of this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">sensor</code>
+                        <span class="type">Boolean</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>If the sensor flag is active or not.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setVerts" class="method item public inherited">
+    <h3 class="name"><code>setVerts</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>verts</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html#method_setVerts">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-extended_shapes.js.html#l221"><code>src\chipmunk-extended\shapes.js:221</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the vertices for this shape.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">verts</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_bb_b" class="property item public inherited">
+    <h3 class="name"><code>bb_b</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_bb_b">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l170"><code>src\chipmunk-docs\shape.js:170</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The bounding boxes bottom point.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bb_l" class="property item public inherited">
+    <h3 class="name"><code>bb_l</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_bb_l">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l161"><code>src\chipmunk-docs\shape.js:161</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The bounding boxes left point.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bb_r" class="property item public inherited">
+    <h3 class="name"><code>bb_r</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_bb_r">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l179"><code>src\chipmunk-docs\shape.js:179</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The bounding boxes right point.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bb_t" class="property item public inherited">
+    <h3 class="name"><code>bb_t</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_bb_t">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l188"><code>src\chipmunk-docs\shape.js:188</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The bounding boxes top point.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_body" class="property item public inherited">
+    <h3 class="name"><code>body</code></h3>
+    <span class="type"><a href="../classes/cp.Body.html" class="crosslink">cp.Body</a></span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_body">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l24"><code>src\chipmunk-docs\shape.js:24</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The body that this shape is attached to.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_collision_type" class="property item public inherited">
+    <h3 class="name"><code>collision_type</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_collision_type">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l70"><code>src\chipmunk-docs\shape.js:70</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Collision type of this shape used when picking collision handlers.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_e" class="property item public inherited">
+    <h3 class="name"><code>e</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_e">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l42"><code>src\chipmunk-docs\shape.js:42</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Coefficient of restitution. (elasticity)</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_group" class="property item public inherited">
+    <h3 class="name"><code>group</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_group">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l79"><code>src\chipmunk-docs\shape.js:79</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Group of this shape. Shapes in the same group don&#39;t collide.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_layers" class="property item public inherited">
+    <h3 class="name"><code>layers</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_layers">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l88"><code>src\chipmunk-docs\shape.js:88</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Layer bitmask for this shape. Shapes only collide if the bitwise and of their layers is non-zero.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> ~0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_sensor" class="property item public inherited">
+    <h3 class="name"><code>sensor</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_sensor">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l32"><code>src\chipmunk-docs\shape.js:32</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The Sensor flag.
+Sensor shapes call collision callbacks but don&#39;t produce collisions.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_space" class="property item public inherited">
+    <h3 class="name"><code>space</code></h3>
+    <span class="type"><a href="../classes/cp.Space.html" class="crosslink">cp.Space</a></span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_space">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l97"><code>src\chipmunk-docs\shape.js:97</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The space that this shape is a part of.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_surface_v" class="property item public inherited">
+    <h3 class="name"><code>surface_v</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_surface_v">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l60"><code>src\chipmunk-docs\shape.js:60</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Surface velocity used when solving for friction.
+You should reassign the all whole object and not just a singular value when editing.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> {x: 0, y: 0}</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_type" class="property item public inherited">
+    <h3 class="name"><code>type</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html#property_type">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-extended_shapes.js.html#l204"><code>src\chipmunk-extended\shapes.js:204</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The type of shape this is.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> &#x27;poly&#x27;</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_u" class="property item public inherited">
+    <h3 class="name"><code>u</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/cp.Shape.html#property_u">cp.Shape</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-docs_shape.js.html#l51"><code>src\chipmunk-docs\shape.js:51</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Coefficient of friction.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_verts" class="property item public inherited">
+    <h3 class="name"><code>verts</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html#property_verts">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a>:
+            
+        
+        
+        <a href="../files/src_chipmunk-extended_shapes.js.html#l213"><code>src\chipmunk-extended\shapes.js:213</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The vertices of this shape.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\component.js - ChipmunkPhysics</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="ChipmunkPhysics"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.8.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/cp.Body.html">cp.Body</a></li>
+            
+                <li><a href="../classes/cp.Constraint.html">cp.Constraint</a></li>
+            
+                <li><a href="../classes/cp.Shape.html">cp.Shape</a></li>
+            
+                <li><a href="../classes/cp.Space.html">cp.Space</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Body.html">Kiwi.Plugins.ChipmunkPhysics.Body</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Component.html">Kiwi.Plugins.ChipmunkPhysics.Component</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring.html">Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring.html">Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Gear.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Gear</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Groove.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Groove</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Pin.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Pin</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit.html">Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor.html">Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Joints.Slide.html">Kiwi.Plugins.ChipmunkPhysics.Joints.Slide</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Manager.html">Kiwi.Plugins.ChipmunkPhysics.Manager</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Box.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Box</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Box2</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment.html">Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment</a></li>
+            
+                <li><a href="../classes/Kiwi.Plugins.ChipmunkPhysics.Space.html">Kiwi.Plugins.ChipmunkPhysics.Space</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/ChipmunkPhysics.html">ChipmunkPhysics</a></li>
+            
+                <li><a href="../modules/cp.html">cp</a></li>
+            
+                <li><a href="../modules/Joints.html">Joints</a></li>
+            
+                <li><a href="../modules/Plugins.html">Plugins</a></li>
+            
+                <li><a href="../modules/Shapes.html">Shapes</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src\component.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+*
+*
+* @module Plugins	
+* @submodule ChipmunkPhysics
+*/
+
+/**
+* A Component which is easily configurable upon creation and attaches to Entities to make adding
+* Bodies and Shapes to Kiwi Objects easy as. 
+* 
+* @namespace Kiwi.Plugins.ChipmunkPhysics
+* @class Component
+* @constructor
+* @extends Kiwi.Component
+* @param owner {Kiwi.Entity} The owner of this Component.
+* @param [config] {Object} Configuration information about the body/shapes that are to be generated.
+*	@param [config.space] {Kiwi.Plugins.ChipmunkPhysics.Space} The space that the objects should be added to.
+* 	@param [config.transform] {Kiwi.Geom.Transform} The transform object that the body should use when created.
+*	@param [config.defaultBody] {Kiwi.Plugins.ChipmunkPhysics.Body} The body to use instead of creating a new one. 
+*		If defined, then the &#x27;body&#x27; param is ignored.
+*	@param [config.type=&#x27;box&#x27;] {String} The default type of shape/body that should be created. 
+*		Only used if a type is not passed to the &#x27;body&#x27; or &#x27;shape&#x27; configs below.  
+*	@param [config.body] {Object} Contains the settings for the body to be generated. See the &#x27;createBody&#x27; static method for more details.
+*	@param [config.shape] {Object} Contains settings for a singular shape to be generatated. See &#x27;createShape&#x27; static method for more details.
+*	@param [config.shapes] {Array} Contains an array of settings for shapes to be generatated. See &#x27;createShape&#x27; static method for more details.
+* @public
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component = function(owner, config) {
+
+	//Extend the Kiwi Components
+	Kiwi.Component.call( this, owner, &#x27;ChipmunkPhysics&#x27; );
+
+	//Check to see that the plugin manager exists
+	if( typeof this.game.chipmunk == &quot;undefined&quot; ) {
+		console.error(&#x27;Could not find the chipmunk manager attached to the game.&#x27;); 
+		return;
+	}
+
+	/**
+	* The Chipmunk Physics manager which should be attached to this game.
+	* @property manager
+	* @type Kiwi.Plugins.ChipmunkPhysics.Manager
+	* @public
+	*/
+	this.manager = this.game.chipmunk;
+
+	/**
+	* A list of all the shapes (hitboxes) attached to this component.
+	* @property shapes
+	* @type Array
+	* @public
+	*/
+	this.shapes = [];
+
+	this._create( config );
+
+	this._applyVeloDefaults( config );
+
+};
+
+Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Component, Kiwi.Component );
+
+
+/**
+* Calculate the default mass based on a sprites width * height / 1000
+* You can override this method to set your own default for physic components.
+* 
+* @method getDefaultMass
+* @param sprite []
+* @return {Number}
+* @public
+* @static
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.getDefaultMass = function( sprite ) {
+	return sprite.width * sprite.height / 1000; 
+};
+
+
+/**
+* Executed when the Component is created. 
+* Is passed a config parameter and then creates a body/shapes depending on the parameters passed. 
+*
+* @method _create
+* @param params {Object}
+* @private
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.prototype._create = function( config ) {
+
+	config = config || {};
+
+	/**
+	* The transformation that the body is using to position itself.
+	* 
+	* @property transform
+	* @type Kiwi.Geom.Transform
+	* @public
+	*/
+	this.transform = config.transform || this.owner.transform;
+
+
+	/**
+	* The space which the shapes/body have been attached to.
+	* 
+	* @property space
+	* @type Any
+	* @public
+	*/ 
+	this.space = config.space || this.manager.space;
+
+	/**
+	* The default type of shapes/body that should be created if a type is not passed.
+	* 
+	* @property defaultType
+	* @type String
+	* @default &#x27;box&#x27;
+	* @private
+	*/
+	this.defaultType = config.type || &#x27;box&#x27;;
+
+
+	/**
+	* The body of this Component. 
+	* 
+	* @property body
+	* @type Kiwi.Plugins.ChipmunkPhysics.Body
+	* @public
+	*/ 
+	if( typeof config.defaultBody !== &quot;undefined&quot; ) {
+	 	this.body = config.defaultBody;
+	} else {
+		this.body = Kiwi.Plugins.ChipmunkPhysics.Component.createBody( this, config.body );
+	}
+
+
+	if( typeof config.shapes !== &quot;undefined&quot; ) {
+		this.shapes.concat( Kiwi.Plugins.ChipmunkPhysics.Component.createShapes( this, config.shapes, config.body ) );
+	} else {
+		this.shapes.push( Kiwi.Plugins.ChipmunkPhysics.Component.createShape( this, config.shape, config.body ) );
+	}
+
+};
+
+
+/**
+* Applys any default velocities passed when this object is created.
+* 
+* @method _applyDefaults
+* @param [params] {Object}
+* 	@param [params.velocityX] {Number} Velocity on the x-axis
+* 	@param [params.velocityY] {Number} Velocity on the y-axis
+* 	@param [params.angularVelo] {Number} Angular velocity
+* 	@param [params.maxVelo] {Number} Maximum velocity
+* 	@param [params.maxAngularVelo] {Number} Maximum angular velocity
+* @private
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.prototype._applyVeloDefaults = function( params ) {
+
+	if( params.velocityX ) {
+		this.velocityX = params.velocityX;
+	}
+
+	if( params.velocityY ) {
+		this.velocityY = params.velocityY; 
+	}
+
+	if( params.angularVelo ) {
+		this.angularVelo = params.angularVelo;
+	}
+
+	if( params.maxVelo ) {
+		this.maxVelocity = params.maxVelo;
+	}
+
+	if( params.maxAngularVelo ) {
+		this.maxAngVelo = params.maxAngVelo;
+	}
+
+};
+
+
+/**
+* Creates a new body based on the configuration parameters passed and the sprite.
+*
+* A number of different &#x27;types&#x27; of bodies can be created and the type you choose changes the parameters you need to pass.
+* Also look at &#x27;Kiwi.Plugins.ChipmunkPhysics.Body&#x27; for more parameters you can pass.
+* 
+* - &#x27;box&#x27; - Uses the &#x27;Kiwi.Plugins.ChipmunkPhysics.createBoxBody&#x27; function
+* - &#x27;circle&#x27; - Uses the &#x27;Kiwi.Plugins.ChipmunkPhysics.createCircleBody&#x27;  function
+* - &#x27;segment&#x27; - Uses the &#x27;Kiwi.Plugins.ChipmunkPhysics.createSegmentBody&#x27;  function
+* - &#x27;poly&#x27; - Uses the &#x27;Kiwi.Plugins.ChipmunkPhysics.createPolyBody&#x27;  function
+* - &#x27;static&#x27; - Gets the body from the space. 
+* - &#x27;custom&#x27; - Directly creates a new Kiwi.Plugins.ChipmunkPhysics.Body.
+* 
+* @method createBody
+* @param physComp {Kiwi.Plugins.ChipmunkPhysics.Component} The component which the body is being created for.
+* @param [config] {Object}
+* 	@param [config.transform] {Kiwi.Geom.Transform} The transform that the body should use. Defaults to the components owners transform. Usually this is as desired.
+*	@param [config.mass] {Number} The mass of the body. If not passed, then one is generated by &#x27;getDefaultMass&#x27; method.
+* 	@param [config.addToSpace=true] {Boolean} If the created body should be added to the space or not.
+*	@param [config.owner] {Any} The owner of the body. If not passed then the owner is the components owner.
+*	@param [config.type=&#x27;box&#x27;] {String} The type of body that is to be created. This value affects the following parameters that you can pass. Defaults to box. 
+*
+*	@param [config.width=box.bounds.width] {Number} &#x27;box&#x27; types only. The width of the box. Defaults to box.bound.width if a box component is found. Otherwise 100.
+*	@param [config.height=box.bounds.height] {Number} &#x27;box&#x27; types only. The height of the box. Defaults to box.bound.height if a box component is found. Otherwise 100.
+*
+*	@param [config.radius=box.bounds.height*0.5] {Number} &#x27;circle&#x27; types only. The circles radius. Defaults to half of the box.bounds.height if a box component is found. Otherwise 50.
+*
+*	@param [config.start] {Object} &#x27;segment&#x27; types only. The starting cooridnates of the line.
+*		@param [config.start.x=-bounds.width * 0.5] {Number} The starting coordinate on the x-axis.
+*		@param [config.start.y=0] {Number} The starting coordinate on the y-axis.
+*	@param [config.end] {Object} &#x27;segment&#x27; types only. 
+*		@param [config.end.x=bounds.width * 0.5] {Number} The end coordinate on the x-axis.
+*		@param [config.end.y=0] {Number} The end coordinate on the y-axis.
+*
+*	@param [config.verts] {Object} &#x27;poly&#x27; types only. The vertices for the polygon shape that the body will be attached to.
+*	
+* @return {Kiwi.Plugins.ChipmunkPhysics.Body} The body
+* @public
+* @static
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.createBody = function( phyComp, config ) {
+
+	var body, bounds,
+		owner = phyComp.owner;
+
+	if( owner.components.hasComponent(&#x27;Box&#x27;) ) {
+		bounds = owner.components.getComponent(&#x27;Box&#x27;).bounds;
+
+	} else {
+		bounds = {
+			width: 100,
+			height: 100
+		};
+
+	}
+
+	config = config || {};
+
+
+	//Defaults
+	config.transform = config.transform || phyComp.transform;
+	config.mass = config.mass || Kiwi.Plugins.ChipmunkPhysics.Component.getDefaultMass( owner );
+	config.owner = config.owner || owner;
+	config.type = config.type || phyComp.defaultType;
+
+
+	switch( config.type.toLowerCase() ) {
+		case &#x27;box&#x27;:
+		case &#x27;rectangle&#x27;:
+		case &#x27;square&#x27;:
+
+			//Default to the width/height of the owner if no dimensions passed
+			config.width = config.width || bounds.width;
+			config.height = config.height || bounds.height;
+
+			body = Kiwi.Plugins.ChipmunkPhysics.createBoxBody( config );
+			break;
+
+		case &#x27;circle&#x27;:
+
+			// config.offset = config.offset; 
+			config.radius = config.radius || bounds.height * 0.5;
+
+			body = Kiwi.Plugins.ChipmunkPhysics.createCircleBody( config );
+			break;
+
+		case &#x27;segment&#x27;:
+		case &#x27;line&#x27;:
+
+			config.start = config.start || { x: -bounds.width * 0.5, y: 0 };
+			config.end = config.end || { x: bounds.width * 0.5, y: 0 };
+
+			body = Kiwi.Plugins.ChipmunkPhysics.createSegmentBody( config );
+			break;
+
+		case &#x27;poly&#x27;:
+
+			if( typeof config.verts == &quot;undefined&quot; ) {
+				config.verts = [ 
+					0, 
+					0, 
+					bounds.width, 
+					0, 
+					bounds.width, 
+					bounds.height, 
+					0, 
+					bounds.height];
+			} 
+			
+			body = Kiwi.Plugins.ChipmunkPhysics.createPolyBody( config );
+			break;
+
+		case &#x27;static&#x27;:
+			body = config.space.staticBody;
+			break;
+
+		case &#x27;custom&#x27;:
+			config.i = config.i || Infinity;
+			body = new Kiwi.Plugins.ChipmunkPhysics.Body( config );
+			break;
+
+	}
+
+	//Add to space.
+	if( typeof config.addToSpace == &quot;undefined&quot; || config.addToSpace) {
+		phyComp.space.addBody( body );
+	} 
+
+	return body;
+};
+
+
+/**
+* Creates new shapes based on the configuration parameters passed and the sprite.
+* Essentually is a wrapper that calls the &#x27;createShape&#x27; method multiple times. 
+* 
+* @method createShapes
+* @param physComp {Kiwi.Plugins.ChipmunkPhysics.Component} The component which the body is being created for.
+* @param [config] {Array|Object}
+* @param [bodyConfig] {Object} The bodies configuration object.
+* @return {Array} An array of shapes that have been created.
+* @public
+* @static
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.createShapes = function( phyComp, config, bodyConfig ) {
+
+	//Multiple shapes...
+	var shape,
+		shapes = [],
+		manager = phyComp.manager,
+		owner = phyComp.owner;
+
+	// Config
+	if( typeof config === &quot;undefined&quot; ) {
+		config = {};
+	} 
+
+	// Array
+	if( ! Kiwi.Utils.Common.isArray( config ) ) {
+		config = [ config ];
+	} 
+
+	//Loop through the shapes
+	for (var i = 0, len = config.length; i &lt; len; i++) {
+		
+		shape = Kiwi.Plugins.ChipmunkPhysics.Component.createShape( phyComp, config[ i ], bodyConfig );
+
+		if( shape ) {
+			shapes.push( shape );
+		}
+
+	}
+
+	return shapes;
+};
+
+
+
+/**
+* Creates a new shape based on the configuration parameters passed and the sprite.
+*
+* A number of different types of shapes can be created. The type choosen changes the parameters you need/can pass.
+* Generally they are the same as the type you pass to the body, but they can be different. 
+*
+* - &#x27;none&#x27; - No shape will be created.
+* - &#x27;box&#x27; - See the &#x27;Kiwi.Plugins.ChipmunkPhysics.Shapes.Box&#x27; 
+* - &#x27;circle&#x27; - See the &#x27;Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle&#x27; 
+* - &#x27;segment&#x27; - See the &#x27;Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment&#x27;
+* - &#x27;poly&#x27; - See the &#x27;Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly&#x27;
+* 
+* @method createShapes
+* @param physComp {Kiwi.Plugins.ChipmunkPhysics.Component} The component which the body is being created for.
+* @param [config] {Object}
+* 	@param [config.body] {Kiwi.Plugins.ChipmunkPhysics.Body} The body that this shape should be a part of.
+* 	@param [config.type] {String} The type of shape that should be created. Defaults to the bodies. 
+* 	@param [config.addToSpace=true] {Boolean} If the created shape should be added to the space or not.
+*
+* 	@param [config.width] {Number} &#x27;box&#x27; types only. Width of the shape. Defaults to the value used for the body. 
+* 	@param [config.height] {Number} &#x27;box&#x27; types only. Height of the shape. Defaults to the value used for the body.
+*
+* 	@param [config.radius] {Number} &#x27;circle&#x27; types only. The radius of the shape. Defaults to the value used for the body.
+* 	@param [config.offset] {Object} &#x27;circle&#x27; types only. Used to offset the shape from the body. 
+* 		@param [config.offset.x=0] {Number} Offset of the shape on the x-axis.
+* 		@param [config.offset.y=0] {Number} Offset of the shape on the y-axis.
+*
+*	@param [config.start] {Object} &#x27;segment&#x27; types only. The starting coordinates of the line.
+*		@param [config.start.x=0] {Number} The starting coordinate on the x-axis.
+*		@param [config.start.y=bounds.height*0.5] {Number} The starting coordinate on the y-axis.
+*	@param [config.end] {Object} &#x27;segment&#x27; types only. The end coordinates of the line.
+*		@param [config.end.x=bounds.width] {Number} The end coordinate on the x-axis.
+*		@param [config.end.y=bounds.height*0.5] {Number} The end coordinate on the y-axis.
+* 	@param [config.radius] {Number} &#x27;segment&#x27; types only. The radius of the line.
+*
+* 	@param [config.verts] {Array} &#x27;poly&#x27; types only. The vertices for the polygon shape.
+* 	@param [config.offset] {Object} &#x27;poly&#x27; types only. Used to offset the shape from the body. 
+* 		@param [config.offset.x=0] {Number} Offset of the shape on the x-axis.
+* 		@param [config.offset.y=0] {Number} Offset of the shape on the y-axis.
+*
+* @param [bodyConfig] {Object} The bodies configuration object. Used to assign defaults for values that are not defined on the &#x27;config&#x27; object.
+* @return {Any} A shapes based on the type parameter passed.
+* @public
+* @static
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.createShape = function( phyComp, config, bodyConfig ) {
+
+	config = config || {};
+
+	var shape, bounds,
+		bodyConfig = bodyConfig || {},
+		owner = phyComp.owner;
+		
+	if( owner.components.hasComponent(&#x27;Box&#x27;) ) {
+		bounds = owner.components.getComponent(&#x27;Box&#x27;).bounds;
+
+	} else {
+		bounds = {
+			width: 100,
+			height: 100
+		};
+
+	}
+
+	config.body = config.body || phyComp.body;
+	config.type = config.type || bodyConfig.type || phyComp.defaultType;
+
+	switch( config.type.toLowerCase() ) {
+
+		case &#x27;none&#x27;:
+			return null;
+
+		case &#x27;box&#x27;:
+		case &#x27;rectangle&#x27;:
+		case &#x27;square&#x27;:
+			//width
+			//height
+			config.width = config.width || bodyConfig.width || bounds.width;
+			config.height = config.height || bodyConfig.width  || bounds.height;
+
+			shape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Box( config ); 
+			break;
+
+		case &#x27;circle&#x27;:
+			
+			//radius
+			//offset - x / y
+			config.radius = config.radius || bodyConfig.radius || bounds.height * 0.5;
+			config.offset = config.offset || bodyConfig.offset;
+
+			shape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Circle( config );
+			break;
+
+		case &#x27;segment&#x27;:
+
+			// a - x / y
+			// b - x / y
+			// r
+			config.start = config.start || bodyConfig.start;
+			config.end = config.end || bodyConfig.end;
+			config.radius = config.radius || bodyConfig.radius || 1;
+
+			shape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Segment( config );
+			break;
+
+		case &#x27;poly&#x27;:
+
+			//verts
+			//offset - x / y
+			config.verts = config.verts || bodyConfig.verts;
+			config.offset = config.offset || bodyConfig.offset;
+
+			shape = new Kiwi.Plugins.ChipmunkPhysics.Shapes.Poly( config );
+			break;
+
+	}
+
+	//Plus others..
+	if( typeof config.addToSpace === &quot;undefined&quot; || config.addToSpace ) {
+		phyComp.space.addShape( shape );
+	}
+
+	return shape;
+};
+
+
+/**
+* The mass of the body. 
+* 
+* @property mass
+* @type Number
+* @public
+*/ 
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;mass&#x27;, {
+
+    get: function () {
+        return this.body.mass;
+    },
+
+    set: function (val) {
+		this.body.setMass(val);
+    },
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+/**
+* The velocity of this body on the X axis.
+* @property velocityX
+* @type Number
+* @public
+*/
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;velocityX&#x27;, {
+
+    get: function () {
+        return this.body.velocityX;
+    },
+
+    set: function (val) {
+    	this.body.velocityX = val;
+    },
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+/**
+* The velocity of this body on the Y axis.
+* @property velocityY
+* @type Number
+* @public
+*/
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;velocityY&#x27;, {
+
+    get: function () {
+        return this.body.velocityY;
+    },
+
+    set: function (val) {
+    	this.body.velocityY = val;
+    },
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+/**
+* The maximum velocity of this object.
+* @property maxVelocity
+* @type Number
+* @default Infinity
+* @public
+*/
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;maxVelocity&#x27;, {
+
+    get: function () {
+        return this.body.maxVelocity;
+    },
+
+    set: function (val) {
+    	this.body.maxVelocity = val;
+    },
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+
+/**
+* The angular velocity of this body.
+* @property angularVelo
+* @type Number
+* @public
+*/
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;angularVelo&#x27;, {
+
+    get: function () {
+        return this.body.angularVelo;
+    },
+
+    set: function (val) {
+    	this.body.angularVelo = val;
+    },
+
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+/**
+* The maximum angular velocity of this object.
+* @property maxAngVelo
+* @type Number
+* @default Infinity
+* @public
+*/
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Component.prototype, &#x27;maxAngVelo&#x27;, {
+
+    get: function () {
+        return this.body.maxAngVelo;
+    },
+
+    set: function (val) {
+    	this.body.maxAngVelo = val;
+    },
+
+
+    enumerable: true,
+
+    configurable: true
+
+});
+
+
+/**
+* Update method. Not used.
+* @method update
+* @public
+*/
+Kiwi.Plugins.ChipmunkPhysics.Component.prototype.update = function() {
+	
+};
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
