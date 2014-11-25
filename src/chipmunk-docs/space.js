@@ -37,7 +37,7 @@
 
 /**
 * The number of iterations that the space property should update each frame.
-* The higher this is the more accurate the physics will be, but the more process intensive it will be also.
+* The higher this is the more accurate the physics will be, but the more processor intensive it will be.
 *
 * @property iterations
 * @type Number
@@ -216,7 +216,7 @@
 
 
 /**
-* Calls the function passeed for each shape in the space.
+* Calls the function passed for each shape in the space.
 * 
 * @method eachShape
 * @param func {Function} Function to execute for each shape in the space. Will contain a single parameter to the current shape. 
@@ -225,7 +225,7 @@
 
 
 /**
-* Calls the function passeed for each body in the space.
+* Calls the function passed for each body in the space.
 * 
 * @method eachBody
 * @param func {Function} Function to execute for each body in the space. Will contain a single parameter to the current body. 
@@ -234,7 +234,7 @@
 
 
 /**
-* Calls the function passeed for each constraint in the space.
+* Calls the function passed for each constraint in the space.
 * 
 * @method eachConstraint
 * @param func {Function} Function to execute for each constraint in the space. Will contain a single parameter to the current constraint. 
@@ -299,7 +299,7 @@
 */
 
 /**
-* Query the space at a point and call @c func for each shape found.
+* Query the space at a point and call func for each shape found.
 * You have to pass a layer and group.
 * Default layer for shapes are -1 and group is 0.
 *

@@ -1,5 +1,3 @@
-
-
 /**
 * 
 * @module Plugins
@@ -21,21 +19,21 @@
 * @return {Kiwi.Plugins.ChipmunkPhysics.Body}
 * @public
 * @static
-* 
+*
 */
 Kiwi.Plugins.ChipmunkPhysics.createBoxBody = function( params ) {
 
-  if( !params && !params.mass && !params.width && !params.height ) {
-    console.warn( 'Not all parameters required passed.' );
-    return null;
-  }
+	if ( !params && !params.mass && !params.width && !params.height ) {
+		console.warn( "Not all parameters required passed." );
+		return null;
+	}
 
-  params.i = cp.momentForBox(
-      params.mass, 
-      params.width, 
-      params.height );
+	params.i = cp.momentForBox(
+			params.mass,
+			params.width,
+			params.height );
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 
 };
 
@@ -60,23 +58,23 @@ Kiwi.Plugins.ChipmunkPhysics.createBoxBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createCircleBody = function( params ) {
 
-  if( !params && !params.mass && !params.radius ) {
-    console.warn( 'Not all parameters required passed.' );
-    return null;
-  }
+	if ( !params && !params.mass && !params.radius ) {
+		console.warn( "Not all parameters required passed." );
+		return null;
+	}
 
 
-  params.innerRadius = params.innerRadius || 0;
-  params.offset = params.offset || { x: 0, y: 0 };
+	params.innerRadius = params.innerRadius || 0;
+	params.offset = params.offset || { x: 0, y: 0 };
 
-  params.i = cp.momentForCircle( 
-      params.mass, 
-      params.innerRadius, 
-      params.radius, 
-      params.offset 
-      );
+	params.i = cp.momentForCircle(
+			params.mass,
+			params.innerRadius,
+			params.radius,
+			params.offset
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 
 };
 
@@ -102,18 +100,18 @@ Kiwi.Plugins.ChipmunkPhysics.createCircleBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createSegmentBody = function( params ) {
 
-  if( !params && !params.mass && !params.start && !params.end ) {
-    console.warn( 'Not all parameters required passed.' );
-    return null;
-  }
+	if ( !params && !params.mass && !params.start && !params.end ) {
+		console.warn( "Not all parameters required passed." );
+		return null;
+	}
 
-  params.i = cp.momentForSegment(
-      params.mass, 
-      params.start, 
-      params.end 
-      );
+	params.i = cp.momentForSegment(
+			params.mass,
+			params.start,
+			params.end
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 };
 
 
@@ -135,18 +133,18 @@ Kiwi.Plugins.ChipmunkPhysics.createSegmentBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createPolyBody = function( params ) {
 
-  if( !params && !params.mass && !params.verts ) {
-    console.warn( 'Not all parameters required passed.' );
-    return null;
-  }
+	if ( !params && !params.mass && !params.verts ) {
+		console.warn( "Not all parameters required passed." );
+		return null;
+	}
 
-  params.offset = params.offset || { x: 0, y: 0 };
+	params.offset = params.offset || { x: 0, y: 0 };
 
-  params.i = cp.momentForPoly(
-      params.mass, 
-      params.verts, 
-      params.offset
-      );
+	params.i = cp.momentForPoly(
+			params.mass,
+			params.verts,
+			params.offset
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 };

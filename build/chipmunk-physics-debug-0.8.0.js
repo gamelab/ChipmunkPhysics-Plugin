@@ -35,7 +35,7 @@ Kiwi.Plugins.ChipmunkPhysicsDebug = {
   minimumKiwiVersion:'1.1.1',
 
   /**
-  * The dependiencies that this plugin needs in-order to function. 
+  * The dependencies that this plugin needs in order to function. 
   * Only dependency for this is the 'ChipmunkPhysics' plugin. 
   * @property pluginDependencies
   * @type Array
@@ -50,11 +50,10 @@ Kiwi.Plugins.ChipmunkPhysicsDebug = {
 
   ]
 
-
 };
 
 
-// Regsisters this plugin with the Global Kiwi Plugins Manager if it is avaiable.
+// Registers this plugin with the Global Kiwi Plugins Manager if it is avaiable.
 Kiwi.PluginManager.register(Kiwi.Plugins.ChipmunkPhysicsDebug);
 
 /**
@@ -71,8 +70,6 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.create = function( game ) {
 
   return game.chipmunkDebug;
 }
- 
-
 
 /**
 * 
@@ -83,19 +80,17 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.create = function( game ) {
 
 
 /**
-* Handles the configuration and displayment of a useful debug overlay that can be used with the ChipmunkPhysics Plugin. 
+* Handles the configuration and display of a useful debug overlay that can be used with the ChipmunkPhysics Plugin. 
 * This class should not be directly created, as it will be created for you when this plugin is attached to a game.
 *
-* The debug overlay requires the 'cp.extra.js' file inorder to render. 
-* The 'cp.extra.js' attacheds drawing method to the shapes/constraints.   
+* The debug overlay requires the "cp.extra.js" file in order to render. 
+* The "cp.extra.js" attaches drawing methods to the shapes/constraints.   
 *
-* 
 * @class Manager
 * @constructor
 * @param game {Kiwi.Game} The game that this is to be attached to.
 */
 Kiwi.Plugins.ChipmunkPhysicsDebug.Manager = function( game ) {
-
 
 	/**
 	* The game that this has been attached to.
@@ -104,7 +99,6 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.Manager = function( game ) {
 	* @public
 	*/
 	this.game = game;
-
 
 	return this;
 };
@@ -119,7 +113,7 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.Manager = function( game ) {
 Kiwi.Plugins.ChipmunkPhysicsDebug.Manager.prototype.boot = function() {
 
 	if( typeof this.game.chipmunk === "undefined" ) {
-		console.error( 'ChipmunkPhysics manager not found.' );
+		console.error( "ChipmunkPhysics manager not found." );
 		return;
 	}
 
@@ -255,12 +249,12 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.Manager.prototype.update = function() {
 
 	var self = this,
 		cm = this.camera.transform.getConcatenatedMatrix(),
-    	ct = this.camera.transform;
+		ct = this.camera.transform;
 
-    //Apply the camera transform
-    this.ctx.save();
-    this.ctx.setTransform(cm.a, cm.b, cm.c, cm.d, cm.tx, cm.ty);
-    this.ctx.transform( 1,0,0,1, -ct.rotPointX, -ct.rotPointY );
+	//Apply the camera transform
+	this.ctx.save();
+	this.ctx.setTransform(cm.a, cm.b, cm.c, cm.d, cm.tx, cm.ty);
+	this.ctx.transform( 1,0,0,1, -ct.rotPointX, -ct.rotPointY );
 
 
 	//Loop Over each shape and draw them
@@ -312,32 +306,32 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.Manager.prototype._drawBodyVelo = function( ct
 	}
 
 	//Stroke / Fill information
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgb(200, 25, 25)';
-    ctx.fillStyle = 'rgb(200, 25, 25)';
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "rgb(200, 25, 25)";
+	ctx.fillStyle = "rgb(200, 25, 25)";
 
-    //Line
-    ctx.beginPath();
-    ctx.moveTo( body.p.x, body.p.y );
-    ctx.lineTo( body.p.x + body.vx , body.p.y + body.vy );
-    ctx.closePath();
-    ctx.stroke();
+	//Line
+	ctx.beginPath();
+	ctx.moveTo( body.p.x, body.p.y );
+	ctx.lineTo( body.p.x + body.vx , body.p.y + body.vy );
+	ctx.closePath();
+	ctx.stroke();
 
-    //ArrowHead
+	//ArrowHead
 	ctx.save();
-    ctx.translate( body.p.x + body.vx, body.p.y + body.vy );
+	ctx.translate( body.p.x + body.vx, body.p.y + body.vy );
 
-    var rot = Math.atan( body.vy / body.vx );
-    rot += ( ( body.vx < 0 ) ? -90 : 90 ) * Math.PI / 180 ;
-    ctx.rotate( rot );
+	var rot = Math.atan( body.vy / body.vx );
+	rot += ( ( body.vx < 0 ) ? -90 : 90 ) * Math.PI / 180 ;
+	ctx.rotate( rot );
 
-    ctx.beginPath();
-    ctx.moveTo( 0, 0 );
-    ctx.lineTo( 2 , 5 );
-    ctx.lineTo( -2 , 5 );
-    ctx.closePath();
-    ctx.stroke();
-    ctx.fill();
+	ctx.beginPath();
+	ctx.moveTo( 0, 0 );
+	ctx.lineTo( 2 , 5 );
+	ctx.lineTo( -2 , 5 );
+	ctx.closePath();
+	ctx.stroke();
+	ctx.fill();
 
 	ctx.restore();
 

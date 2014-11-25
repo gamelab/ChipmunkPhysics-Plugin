@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src\chipmunk-extended\space.js - ChipmunkPhysics</title>
+    <title>src/chipmunk-extended/space.js - ChipmunkPhysics</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -136,7 +136,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: src\chipmunk-extended\space.js</h1>
+                        <h1 class="file-heading">File: src/chipmunk-extended/space.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -213,15 +213,15 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Space, cp.Space );
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, &#x27;gravityX&#x27;, {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, &quot;gravityX&quot;, {
 
 	get: function () {
 		return this.gravity.x;
 	},
 
 	set: function ( val ) {
-		this.gravity = { 
-			x: val, 
+		this.gravity = {
+			x: val,
 			y: this.gravity.y 
 		};
 	},
@@ -239,15 +239,15 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, &#x27;gravi
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, &#x27;gravityY&#x27;, {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, &quot;gravityY&quot;, {
 
 	get: function () {
 		return this.gravity.y;
 	},
 
 	set: function ( val ) {
-		this.gravity = { 
-			x: this.gravity.x, 
+		this.gravity = {
+			x: this.gravity.x,
 			y: val
 		};
 	},

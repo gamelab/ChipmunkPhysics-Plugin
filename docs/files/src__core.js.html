@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src\_core.js - ChipmunkPhysics</title>
+    <title>src/_core.js - ChipmunkPhysics</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -136,7 +136,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: src\_core.js</h1>
+                        <h1 class="file-heading">File: src/_core.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -148,34 +148,34 @@
 * @namespace Kiwi
 */
 Kiwi.Plugins.ChipmunkPhysics = {
-  
-  /**
-  * The name of this plugin.
-  * @property name
-  * @type String
-  * @default &#x27;ChipmunkPhysics&#x27;
-  * @public
-  * @static
-  */
-  name:&#x27;ChipmunkPhysics&#x27;,
+	
+	/**
+	* The name of this plugin.
+	* @property name
+	* @type String
+	* @default &quot;ChipmunkPhysics&quot;
+	* @public
+	* @static
+	*/
+	name:&quot;ChipmunkPhysics&quot;,
 
-  /**
-  * The version of this plugin.
-  * @property version
-  * @type String
-  * @public
-  * @static
-  */
-  version:&#x27;0.8.0&#x27;,
+	/**
+	* The version of this plugin.
+	* @property version
+	* @type String
+	* @public
+	* @static
+	*/
+	version:&quot;0.8.0&quot;,
 
-  /**
-  * The minimum version of Kiwi.js required to run this plugin in semver (semantic versioning) format
-  * @property minimumKiwiVersion
-  * @type String
-  * @public
-  * @static
-  */
-  minimumKiwiVersion:&#x27;1.1.1&#x27;
+	/**
+	* The minimum version of Kiwi.js required to run this plugin in semver (semantic versioning) format
+	* @property minimumKiwiVersion
+	* @type String
+	* @public
+	* @static
+	*/
+	minimumKiwiVersion:&quot;1.1.1&quot;
 
 };
 
@@ -196,20 +196,19 @@ Kiwi.PluginManager.register(Kiwi.Plugins.ChipmunkPhysics);
 Kiwi.Plugins.ChipmunkPhysics.create = function(game) {
 
 
-  //Does the chipmunk physics exists
-  if(typeof cp == &quot;undefined&quot;) {
-    console.error(&#x27;You need to include the chipmunk library in-order for this plugin to work.&#x27;);
-    return false;
-  } 
+	// Does the chipmunk physics exists
+	if ( typeof cp === &quot;undefined&quot; ) {
+		console.error(&quot;You need to include the chipmunk library in-order for this plugin to work.&quot;);
+		return false;
+	}
 
 
-  // Create the Manager.
-  game.chipmunk = new Kiwi.Plugins.ChipmunkPhysics.Manager(game, cp);
+	// Create the Manager.
+	game.chipmunk = new Kiwi.Plugins.ChipmunkPhysics.Manager(game, cp);
 
 
-  return game.chipmunk;
-}
- 
+	return game.chipmunk;
+};
 
     </pre>
 </div>

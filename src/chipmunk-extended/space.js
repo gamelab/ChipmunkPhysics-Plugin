@@ -71,15 +71,15 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Space, cp.Space );
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, 'gravityX', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, "gravityX", {
 
 	get: function () {
 		return this.gravity.x;
 	},
 
 	set: function ( val ) {
-		this.gravity = { 
-			x: val, 
+		this.gravity = {
+			x: val,
 			y: this.gravity.y 
 		};
 	},
@@ -97,15 +97,15 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, 'gravityX',
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, 'gravityY', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Space.prototype, "gravityY", {
 
 	get: function () {
 		return this.gravity.y;
 	},
 
 	set: function ( val ) {
-		this.gravity = { 
-			x: this.gravity.x, 
+		this.gravity = {
+			x: this.gravity.x,
 			y: val
 		};
 	},

@@ -6,8 +6,8 @@
         "url": "http://kiwijs.org/"
     },
     "files": {
-        "debug\\src\\core.js": {
-            "name": "debug\\src\\core.js",
+        "debug/src/core.js": {
+            "name": "debug/src/core.js",
             "modules": {
                 "ChipmunkPhysicsDebug": 1
             },
@@ -17,8 +17,8 @@
                 "Kiwi.Plugins.ChipmunkPhysicsDebug": 1
             }
         },
-        "debug\\src\\debug.js": {
-            "name": "debug\\src\\debug.js",
+        "debug/src/debug.js": {
+            "name": "debug/src/debug.js",
             "modules": {},
             "classes": {
                 "Manager": 1
@@ -40,8 +40,8 @@
             "namespaces": {
                 "Kiwi.Plugins.ChipmunkPhysicsDebug": 1
             },
-            "file": "debug\\src\\debug.js",
-            "line": 10
+            "file": "debug/src/debug.js",
+            "line": 9
         },
         "ChipmunkPhysicsDebug": {
             "name": "ChipmunkPhysicsDebug",
@@ -56,8 +56,8 @@
             },
             "module": "Plugins",
             "namespace": "",
-            "file": "debug\\src\\debug.js",
-            "line": 10,
+            "file": "debug/src/debug.js",
+            "line": 9,
             "description": "Namespace containing the helpful methods for debugging \nand visualising Chipmunk Physics."
         }
     },
@@ -73,9 +73,9 @@
             "module": "Plugins",
             "submodule": "ChipmunkPhysicsDebug",
             "namespace": "",
-            "file": "debug\\src\\debug.js",
-            "line": 10,
-            "description": "Handles the configuration and displayment of a useful debug overlay that can be used with the ChipmunkPhysics Plugin. \nThis class should not be directly created, as it will be created for you when this plugin is attached to a game.\n\nThe debug overlay requires the 'cp.extra.js' file inorder to render. \nThe 'cp.extra.js' attacheds drawing method to the shapes/constraints.",
+            "file": "debug/src/debug.js",
+            "line": 9,
+            "description": "Handles the configuration and display of a useful debug overlay that can be used with the ChipmunkPhysics Plugin. \nThis class should not be directly created, as it will be created for you when this plugin is attached to a game.\n\nThe debug overlay requires the \"cp.extra.js\" file in order to render. \nThe \"cp.extra.js\" attaches drawing methods to the shapes/constraints.",
             "is_constructor": 1,
             "params": [
                 {
@@ -88,7 +88,7 @@
     },
     "classitems": [
         {
-            "file": "debug\\src\\core.js",
+            "file": "debug/src/core.js",
             "line": 12,
             "description": "The name of this Plugin.",
             "itemtype": "property",
@@ -103,7 +103,7 @@
             "namespace": "Kiwi.Plugins.ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\core.js",
+            "file": "debug/src/core.js",
             "line": 21,
             "description": "The version of this Chipmunk Physics plugin.",
             "itemtype": "property",
@@ -117,7 +117,7 @@
             "namespace": "Kiwi.Plugins.ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\core.js",
+            "file": "debug/src/core.js",
             "line": 29,
             "description": "The minimum version of Kiwi needed for this plugin to execute.",
             "itemtype": "property",
@@ -131,9 +131,9 @@
             "namespace": "Kiwi.Plugins.ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\core.js",
+            "file": "debug/src/core.js",
             "line": 37,
-            "description": "The dependiencies that this plugin needs in-order to function. \nOnly dependency for this is the 'ChipmunkPhysics' plugin.",
+            "description": "The dependencies that this plugin needs in order to function. \nOnly dependency for this is the 'ChipmunkPhysics' plugin.",
             "itemtype": "property",
             "name": "pluginDependencies",
             "type": "Array",
@@ -145,8 +145,8 @@
             "namespace": "Kiwi.Plugins.ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\core.js",
-            "line": 60,
+            "file": "debug/src/core.js",
+            "line": 59,
             "description": "This create method is executed when Kiwi Game that has been told to use this plugin reaches the boot stage of the game loop.\nShould only be called internally by the Kiwi engine.",
             "itemtype": "method",
             "name": "create",
@@ -165,8 +165,8 @@
             "namespace": "Kiwi.Plugins.ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 25,
+            "file": "debug/src/debug.js",
+            "line": 22,
             "description": "The game that this has been attached to.",
             "itemtype": "property",
             "name": "game",
@@ -178,8 +178,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 38,
+            "file": "debug/src/debug.js",
+            "line": 34,
             "description": "Executed when the game this manager is attached to boots.",
             "itemtype": "method",
             "name": "boot",
@@ -190,8 +190,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 51,
+            "file": "debug/src/debug.js",
+            "line": 47,
             "description": "The Chipmunk Physics Plugin which is attached to this game.",
             "itemtype": "property",
             "name": "chipmunk",
@@ -203,8 +203,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 59,
+            "file": "debug/src/debug.js",
+            "line": 55,
             "description": "The core chipmunk object.",
             "itemtype": "property",
             "name": "cp",
@@ -216,8 +216,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 67,
+            "file": "debug/src/debug.js",
+            "line": 63,
             "description": "The space on which we are going to be debugging.\nUpdate this property to change change the space which is being debugged.\nOnly needed to be updated if you have multiple different spaces.",
             "itemtype": "property",
             "name": "debugSpace",
@@ -229,8 +229,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 77,
+            "file": "debug/src/debug.js",
+            "line": 73,
             "description": "The camera which is to be taken into account when rendering. \nDefaults to the defaultcamera.",
             "itemtype": "property",
             "name": "camera",
@@ -242,8 +242,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 86,
+            "file": "debug/src/debug.js",
+            "line": 82,
             "description": "If the debug overlay should be rendering or not.",
             "itemtype": "property",
             "name": "active",
@@ -255,8 +255,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 94,
+            "file": "debug/src/debug.js",
+            "line": 90,
             "description": "The rendering context of the canvas we are rendering to.",
             "itemtype": "property",
             "name": "ctx",
@@ -268,8 +268,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 103,
+            "file": "debug/src/debug.js",
+            "line": 99,
             "description": "If the shapes should be rendered or not.",
             "itemtype": "property",
             "name": "renderShapes",
@@ -282,8 +282,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 113,
+            "file": "debug/src/debug.js",
+            "line": 109,
             "description": "If the constraints should be rendered or not.",
             "itemtype": "property",
             "name": "renderConstraints",
@@ -296,8 +296,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 123,
+            "file": "debug/src/debug.js",
+            "line": 119,
             "description": "If the bodies should be rendered or not.",
             "itemtype": "property",
             "name": "renderBodies",
@@ -310,8 +310,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 134,
+            "file": "debug/src/debug.js",
+            "line": 130,
             "description": "Creates the debug canvas, gets the rendering context and sets it to active.",
             "itemtype": "method",
             "name": "init",
@@ -322,8 +322,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 148,
+            "file": "debug/src/debug.js",
+            "line": 144,
             "description": "Stops rendering to the debug overlay. Does not hide the debug canvas.",
             "itemtype": "method",
             "name": "stop",
@@ -334,8 +334,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 158,
+            "file": "debug/src/debug.js",
+            "line": 154,
             "description": "Starts rendering to the debug overlay. Does not create/show the debug overlay!",
             "itemtype": "method",
             "name": "start",
@@ -346,8 +346,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 167,
+            "file": "debug/src/debug.js",
+            "line": 163,
             "description": "Update method. Used to draw the debug shapes when activated.",
             "itemtype": "method",
             "name": "update",
@@ -358,8 +358,8 @@
             "submodule": "ChipmunkPhysicsDebug"
         },
         {
-            "file": "debug\\src\\debug.js",
-            "line": 226,
+            "file": "debug/src/debug.js",
+            "line": 222,
             "description": "Renders the body position and the velocity vectors of it.\nWould be nice to add in velocity",
             "itemtype": "method",
             "name": "_drawBodyVelo",

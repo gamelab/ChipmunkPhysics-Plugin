@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src\statics.js - ChipmunkPhysics</title>
+    <title>src/statics.js - ChipmunkPhysics</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -136,12 +136,10 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: src\statics.js</h1>
+                        <h1 class="file-heading">File: src/statics.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-
-
 /**
 * 
 * @module Plugins
@@ -163,21 +161,21 @@
 * @return {Kiwi.Plugins.ChipmunkPhysics.Body}
 * @public
 * @static
-* 
+*
 */
 Kiwi.Plugins.ChipmunkPhysics.createBoxBody = function( params ) {
 
-  if( !params &amp;&amp; !params.mass &amp;&amp; !params.width &amp;&amp; !params.height ) {
-    console.warn( &#x27;Not all parameters required passed.&#x27; );
-    return null;
-  }
+	if ( !params &amp;&amp; !params.mass &amp;&amp; !params.width &amp;&amp; !params.height ) {
+		console.warn( &quot;Not all parameters required passed.&quot; );
+		return null;
+	}
 
-  params.i = cp.momentForBox(
-      params.mass, 
-      params.width, 
-      params.height );
+	params.i = cp.momentForBox(
+			params.mass,
+			params.width,
+			params.height );
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 
 };
 
@@ -202,23 +200,23 @@ Kiwi.Plugins.ChipmunkPhysics.createBoxBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createCircleBody = function( params ) {
 
-  if( !params &amp;&amp; !params.mass &amp;&amp; !params.radius ) {
-    console.warn( &#x27;Not all parameters required passed.&#x27; );
-    return null;
-  }
+	if ( !params &amp;&amp; !params.mass &amp;&amp; !params.radius ) {
+		console.warn( &quot;Not all parameters required passed.&quot; );
+		return null;
+	}
 
 
-  params.innerRadius = params.innerRadius || 0;
-  params.offset = params.offset || { x: 0, y: 0 };
+	params.innerRadius = params.innerRadius || 0;
+	params.offset = params.offset || { x: 0, y: 0 };
 
-  params.i = cp.momentForCircle( 
-      params.mass, 
-      params.innerRadius, 
-      params.radius, 
-      params.offset 
-      );
+	params.i = cp.momentForCircle(
+			params.mass,
+			params.innerRadius,
+			params.radius,
+			params.offset
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 
 };
 
@@ -244,18 +242,18 @@ Kiwi.Plugins.ChipmunkPhysics.createCircleBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createSegmentBody = function( params ) {
 
-  if( !params &amp;&amp; !params.mass &amp;&amp; !params.start &amp;&amp; !params.end ) {
-    console.warn( &#x27;Not all parameters required passed.&#x27; );
-    return null;
-  }
+	if ( !params &amp;&amp; !params.mass &amp;&amp; !params.start &amp;&amp; !params.end ) {
+		console.warn( &quot;Not all parameters required passed.&quot; );
+		return null;
+	}
 
-  params.i = cp.momentForSegment(
-      params.mass, 
-      params.start, 
-      params.end 
-      );
+	params.i = cp.momentForSegment(
+			params.mass,
+			params.start,
+			params.end
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 };
 
 
@@ -277,21 +275,22 @@ Kiwi.Plugins.ChipmunkPhysics.createSegmentBody = function( params ) {
 */
 Kiwi.Plugins.ChipmunkPhysics.createPolyBody = function( params ) {
 
-  if( !params &amp;&amp; !params.mass &amp;&amp; !params.verts ) {
-    console.warn( &#x27;Not all parameters required passed.&#x27; );
-    return null;
-  }
+	if ( !params &amp;&amp; !params.mass &amp;&amp; !params.verts ) {
+		console.warn( &quot;Not all parameters required passed.&quot; );
+		return null;
+	}
 
-  params.offset = params.offset || { x: 0, y: 0 };
+	params.offset = params.offset || { x: 0, y: 0 };
 
-  params.i = cp.momentForPoly(
-      params.mass, 
-      params.verts, 
-      params.offset
-      );
+	params.i = cp.momentForPoly(
+			params.mass,
+			params.verts,
+			params.offset
+			);
 
-  return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
+	return new Kiwi.Plugins.ChipmunkPhysics.Body( params );
 };
+
     </pre>
 </div>
 

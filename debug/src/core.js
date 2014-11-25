@@ -35,7 +35,7 @@ Kiwi.Plugins.ChipmunkPhysicsDebug = {
   minimumKiwiVersion:'1.1.1',
 
   /**
-  * The dependiencies that this plugin needs in-order to function. 
+  * The dependencies that this plugin needs in order to function. 
   * Only dependency for this is the 'ChipmunkPhysics' plugin. 
   * @property pluginDependencies
   * @type Array
@@ -50,11 +50,10 @@ Kiwi.Plugins.ChipmunkPhysicsDebug = {
 
   ]
 
-
 };
 
 
-// Regsisters this plugin with the Global Kiwi Plugins Manager if it is avaiable.
+// Registers this plugin with the Global Kiwi Plugins Manager if it is avaiable.
 Kiwi.PluginManager.register(Kiwi.Plugins.ChipmunkPhysicsDebug);
 
 /**
@@ -71,4 +70,3 @@ Kiwi.Plugins.ChipmunkPhysicsDebug.create = function( game ) {
 
   return game.chipmunkDebug;
 }
- 

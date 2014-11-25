@@ -22,34 +22,34 @@
 Kiwi.Plugins.ChipmunkPhysics.Manager = function( game, cp ) {
 
 
-  /**
-  * The game that this manager is a part of.
-  * @property game
-  * @type Kiwi.Game
-  * @public
-  */
-  this.game = game;
+	/**
+	* The game that this manager is a part of.
+	* @property game
+	* @type Kiwi.Game
+	* @public
+	*/
+	this.game = game;
 
 
-  /**
-  * The main chipmunk namespace.
-  * @property cp
-  * @type Any
-  * @public
-  */  
-  this.cp = cp; 
+	/**
+	* The main chipmunk namespace.
+	* @property cp
+	* @type Any
+	* @public
+	*/
+	this.cp = cp;
 
 
-  /**
-  * Speed at which all spaces managed by this object are to be updated by each frame.
-  * @property updateSpeed
-  * @type Number
-  * @default 1/60
-  * @public
-  */
-  this.updateSpeed = 1 / 60; 
+	/**
+	* Speed at which all spaces managed by this object are to be updated by each frame.
+	* @property updateSpeed
+	* @type Number
+	* @default 1/60
+	* @public
+	*/
+	this.updateSpeed = 1 / 60;
 
-}; 
+};
 
 /**
 * Creates the initial default space.
@@ -61,40 +61,40 @@ Kiwi.Plugins.ChipmunkPhysics.Manager = function( game, cp ) {
 Kiwi.Plugins.ChipmunkPhysics.Manager.prototype.boot = function() {
 
 
-  /**
-  * A list of all the chipmunk spaces manager for this game. 
-  * @property spaces
-  * @type Array
-  * @public
-  */
-  this.spaces = [];
+	/**
+	* A list of all the chipmunk spaces manager for this game. 
+	* @property spaces
+	* @type Array
+	* @public
+	*/
+	this.spaces = [];
 
 
-  /**
-  * The default space created at boot time.
-  * @property defaultSpace
-  * @type Kiwi.Plugins.ChipmunkPhysics.Space
-  * @public
-  */
+	/**
+	* The default space created at boot time.
+	* @property defaultSpace
+	* @type Kiwi.Plugins.ChipmunkPhysics.Space
+	* @public
+	*/
 
-  /**
-  * The 'main' space which new Components will use when one has not been passed. 
-  * By default this is the same as the 'defaultSpace' this can be reassigned.
-  * @property space
-  * @type Kiwi.Plugins.ChipmunkPhysics.Space
-  * @public
-  */
-  this.defaultSpace = this.space = this.createNewSpace();
+	/**
+	* The 'main' space which new Components will use when one has not been passed. 
+	* By default this is the same as the 'defaultSpace' this can be reassigned.
+	* @property space
+	* @type Kiwi.Plugins.ChipmunkPhysics.Space
+	* @public
+	*/
+	this.defaultSpace = this.space = this.createNewSpace();
 
 
-  /**
-  * If the spaces managed by this plugin should update or not. 
-  * @property active
-  * @default true
-  * @type Boolean
-  * @public
-  */
-  this.active = true;
+	/**
+	* If the spaces managed by this plugin should update or not. 
+	* @property active
+	* @default true
+	* @type Boolean
+	* @public
+	*/
+	this.active = true;
 
 };
 
@@ -111,12 +111,15 @@ Kiwi.Plugins.ChipmunkPhysics.Manager.prototype.boot = function() {
 */
 Kiwi.Plugins.ChipmunkPhysics.Manager.prototype.createNewSpace = function( managed, spaceConfig ) {
 
-  var managed = managed || true;
-  var space = new Kiwi.Plugins.ChipmunkPhysics.Space( spaceConfig );
+	var space = new Kiwi.Plugins.ChipmunkPhysics.Space( spaceConfig );
 
-  if(managed) this.spaces.push(space);
-  
-  return space;
+	managed = managed || true;
+
+	if ( managed ) {
+		this.spaces.push( space );
+	}
+
+	return space;
 
 };
 
@@ -131,28 +134,15 @@ Kiwi.Plugins.ChipmunkPhysics.Manager.prototype.createNewSpace = function( manage
 * @public
 */
 Object.defineProperty(Kiwi.Plugins.ChipmunkPhysics.Manager.prototype, "iterations", {
-    get: function () {
-      return this.space.iterations;
-    },
-    set: function(val) {
-      this.space.iterations = val;
-    },
-    enumerable: true,
-    configurable: true
+		get: function () {
+			return this.space.iterations;
+		},
+		set: function(val) {
+			this.space.iterations = val;
+		},
+		enumerable: true,
+		configurable: true
 });
-
-
-//Doesn't currently work! :(
-Object.defineProperty(Kiwi.Plugins.ChipmunkPhysics.Manager.prototype, "gravity", {
-    get: function () {
-      return this.space.gravity;
-    },
-
-    enumerable: true,
-
-    configurable: true
-});
-
 
 
 /**
@@ -163,16 +153,15 @@ Object.defineProperty(Kiwi.Plugins.ChipmunkPhysics.Manager.prototype, "gravity",
 */
 Kiwi.Plugins.ChipmunkPhysics.Manager.prototype.update = function() {
 
-  //Update all the spaces each frame...
-  var len = this.spaces.length;
+	// Update all the spaces each frame...
+	var len = this.spaces.length;
 
+	if( this.active ) {
+		
+		while( len-- ) {
+			this.spaces[ len ].step( this.updateSpeed );
+		}
 
-  if( this.active ) {
-    
-    while( len-- ) {
-      this.spaces[ len ].step( this.updateSpeed );
-    }
+	}
 
-  }
-
-}
+};

@@ -20,12 +20,12 @@
 * @constructor
 * @param [params] {Object}
 *	@param params.mass {Number} The mass of this body. 
-* 	@param params.i {Number} Moment of inertia. Used to resolve collisions.
-*   @param [params.transform] {Kiwi.Geom.Transform} The transform that this body will use to position itself by. 
-*       If not passed, one is created.
-*   @param [params.center] {Object} The location of the bodies centeroid from the transform top left corner. You must either assign both or neither.
-* 		@param [params.center.x] {Number} The X location of the centeroid. Defaults to the transforms anchorPointX. 
-* 		@param [params.center.y] {Number} The Y location of the centeroid. Defaults to the transforms anchorPointY/
+*	@param params.i {Number} Moment of inertia. Used to resolve collisions.
+*	@param [params.transform] {Kiwi.Geom.Transform} The transform that this body will use to position itself by. 
+*		If not passed, one is created.
+*	@param [params.center] {Object} The location of the bodies centroid from the transform top left corner. You must either assign both or neither.
+*		@param [params.center.x] {Number} The X location of the centroid. Defaults to the transforms anchorPointX. 
+*		@param [params.center.y] {Number} The Y location of the centroid. Defaults to the transforms anchorPointY/
 *	@param [params.owner=null] {Any} The owner of this body. Generally assigned to a sprite.
 *	@param [params.velocity] {Object} Velocity of the body.
 *		@param [params.velocity.x=0] {Number} Velocity of the body on the x-axis.
@@ -33,7 +33,6 @@
 *	@param [params.maxVelocity=Infinity] {Number} Maximum velocity of the body. 
 *	@param [params.angVelo=0] {Number} Angular velocity of the body.
 *	@param [params.maxAngVelo=Infinity] {Number} Maximum angular velocity of the body.
-*
 */
 Kiwi.Plugins.ChipmunkPhysics.Body = function( params ) {
 
@@ -53,7 +52,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body = function( params ) {
 	* @property center
 	* @type Kiwi.Geom.Point
 	* @public
-	*/ 
+	*/
 	this.center = new Kiwi.Geom.Point( params.center.x, params.center.y );
 
 
@@ -107,7 +106,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body.parseParams = function( params ) {
 
 	params = params || {};
 
-	params.transform = params.transform || new Kiwi.Geom.Transform( 0, 0 ); 
+	params.transform = params.transform || new Kiwi.Geom.Transform( 0, 0 );
 
 	params.center = params.center || { x: params.transform.anchorPointX, y: params.transform.anchorPointY };
 
@@ -116,14 +115,14 @@ Kiwi.Plugins.ChipmunkPhysics.Body.parseParams = function( params ) {
 	if( typeof params.m !== "undefined" ) {
 		params.mass = params.m;
 
-	} else if( typeof params.mass == "undefined" ) {
-		console.warn('No mass passed. Assigning default.');
+	} else if( typeof params.mass === "undefined" ) {
+		console.warn("No mass passed. Assigning default.");
 		params.mass = 100; 
 	
 	}
 
-	if( typeof params.i == "undefined" ) {
-		console.warn('No moment of inertia passed. Assigning default.');
+	if( typeof params.i === "undefined" ) {
+		console.warn("No moment of inertia passed. Assigning default.");
 		params.i = 100;
 	}
 
@@ -154,7 +153,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body.prototype.setPos = function( x, y ) {
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'x', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "x", {
 
 	get: function () {
 		return this.transform.worldX + this.center.x;
@@ -164,7 +163,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'x', {
 		this.activate();
 
 		if( this.transform.parent ) {
-			var parentRot =  Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( this.transform.parent );
+			var parentRot = Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( this.transform.parent );
 			val -= this.x;
 
 			this.transform.x += val * Math.cos( parentRot );
@@ -193,7 +192,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'x', {
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'y', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "y", {
 
 	get: function () {
 		return this.transform.worldY + this.center.y;
@@ -232,13 +231,12 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'y', {
 * @public
 */
 Kiwi.Plugins.ChipmunkPhysics.Body.prototype.setAngle = function( angle ) {
+	var pRot = 0;
 
 	this.activate();
 
-	if( this.transform.parent ) {
-		var pRot = Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( this.transform.parent );
-	} else {
-		var pRot = 0;
+	if ( this.transform.parent ) {
+		pRot = Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( this.transform.parent );
 	}
 
 	this.transform.rotation = angle - pRot;
@@ -253,7 +251,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body.prototype.setAngle = function( angle ) {
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'rotation', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "rotation", {
 
 	get: function () {
 		return Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( this.transform );
@@ -283,7 +281,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation = function( trans ) {
 
 	var rot = trans.rotation;
 
-	if( trans.parent ) {
+	if ( trans.parent ) {
 		return rot + Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation( trans.parent );
 	}
 
@@ -299,7 +297,7 @@ Kiwi.Plugins.ChipmunkPhysics.Body.getWorldRotation = function( trans ) {
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'mass', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "mass", {
 
 	get: function () {
 		return this.m;
@@ -321,7 +319,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'mass', {
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'velocityX', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "velocityX", {
 
 	get: function () {
 		return this.vx;
@@ -345,7 +343,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'velocityX',
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'velocityY', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "velocityY", {
 
 	get: function () {
 		return this.vy;
@@ -368,7 +366,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'velocityY',
 * @type Number
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'angularVelo', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "angularVelo", {
 
 	get: function () {
 		return this.w;
@@ -391,7 +389,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'angularVelo
 * @default Infinity
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'maxVelocity', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "maxVelocity", {
 
 	get: function () {
 		return this.v_limit;
@@ -416,7 +414,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'maxVelocity
 * @default Infinity
 * @public
 */
-Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'maxAngVelo', {
+Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, "maxAngVelo", {
 
 	get: function () {
 		return this.w_limit;
@@ -435,7 +433,7 @@ Object.defineProperty( Kiwi.Plugins.ChipmunkPhysics.Body.prototype, 'maxAngVelo'
 
 
 /**
-* Overriden version of the function which handles adjusting objects position/rotation after collisions. 
+* Overridden version of the function which handles adjusting objects position/rotation after collisions. 
 * @method position_func
 * @param dt {Number}
 * @private

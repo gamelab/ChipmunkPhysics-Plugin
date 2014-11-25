@@ -28,15 +28,15 @@
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
 	params.a = params.bodyA || params.a;
 	params.b = params.bodyB || params.b;
 
-	if( params.pivot ) {
+	if ( params.pivot ) {
 		cp.PivotJoint.call( this, params.a, params.b, params.pivot );
 	
 	} else {
@@ -44,7 +44,7 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot = function( params ) {
 		params.anchorB = params.anchorB || { x: 0, y: 0 };
 
 		cp.PivotJoint.call( this, params.a, params.b, params.anchorA, params.anchorB );
-	} 
+	}
 
 	Kiwi.Plugins.ChipmunkPhysics.Joints.ParamConstruct.call( this, params );
 	
@@ -53,14 +53,14 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot = function( params ) {
 	* @property anchr1
 	* @type Object
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* The anchor point on the second body.
 	* @property anchr2
 	* @type Object
 	* @public
-	*/ 	
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot, cp.PivotJoint );
@@ -90,8 +90,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Pivot, cp.PivotJoint );
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Pin = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -102,22 +102,22 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Pin = function( params ) {
 	params.anchorB = params.anchorB || { x: 0, y: 0 };
 
 	cp.PinJoint.call( this, params.a, params.b, params.anchorA, params.anchorB );
-	
+
 	Kiwi.Plugins.ChipmunkPhysics.Joints.ParamConstruct.call( this, params );
-	
+
 	/**
 	* The anchor point on the first body.
 	* @property anchr1
 	* @type Object
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* The anchor point on the second body.
 	* @property anchr2
 	* @type Object
 	* @public
-	*/ 	
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Pin, cp.PinJoint );
@@ -150,52 +150,52 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Pin, cp.PinJoint );
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Groove = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
 	params.a = params.bodyA || params.a;
 	params.b = params.bodyB || params.b;
 
-	if( !params.grooveA || !params.grooveB ) {
-		console.error('You need to pass both groves.');
+	if ( !params.grooveA || !params.grooveB ) {
+		console.error("You need to pass both grooves.");
 		return;
 	}
 
 	params.anchor = params.anchor || { x: 0, y: 0 };
 
 	cp.GrooveJoint.call( this, params.a, params.b, params.grooveA, params.grooveB, params.anchor );
-	
+
 	Kiwi.Plugins.ChipmunkPhysics.Joints.ParamConstruct.call( this, params );
-	
+
 	/**
 	* The start point of the groove on the first body.
 	* @property grv_a
 	* @type Object
 	* @private
-	*/ 	
+	*/
 
 	/**
 	* The end point of the groove on the first body.
 	* @property grv_b
 	* @type Object
 	* @private
-	*/ 	
+	*/
 
 	/**
 	* Sets the start point of the groove on the first body.
 	* @method setGrooveA
 	* @param value {Object}
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* Sets the end point of the groove on the first body.
 	* @method setGrooveB
 	* @param value {Object}
 	* @public
-	*/ 	
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Groove, cp.GrooveJoint );
@@ -222,8 +222,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Groove, cp.GrooveJoint );
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Gear = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -242,14 +242,14 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Gear = function( params ) {
 	* @property phase
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 	/**
 	* Sets the ratio of the rotational speeds.
 	* @method setRatio
 	* @param value {Number}
 	* @public
-	*/ 
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Gear, cp.GearJoint );
@@ -284,8 +284,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Gear, cp.GearJoint );
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -298,9 +298,9 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring = function( params ) {
 	params.stiffness = params.stiffness || 50;
 	params.damping = params.damping || 1;
 
-	cp.DampedSpring.call( this, 
-		params.a, 
-		params.b, 
+	cp.DampedSpring.call( this,
+		params.a,
+		params.b,
 		params.anchorA,
 		params.anchorB,
 		params.restLength,
@@ -314,14 +314,14 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring = function( params ) {
 	* @property anchr1
 	* @type Object
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* The anchor point on the second body.
 	* @property anchr2
 	* @type Object
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* The length the spring wants to contract or expand to. 
@@ -375,8 +375,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.DampedSpring, cp.DampedSpring )
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -387,9 +387,9 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring = function( params ) {
 	params.stiffness = params.stiffness || 50;
 	params.damping = params.damping || 1;
 
-	cp.DampedRotarySpring.call( this, 
-		params.a, 
-		params.b, 
+	cp.DampedRotarySpring.call( this,
+		params.a,
+		params.b,
 		params.restAngle,
 		params.stiffness,
 		params.damping );
@@ -441,8 +441,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.DampedRotarySpring, cp.DampedRo
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -461,14 +461,14 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet = function( params ) {
 	* @property phase
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 	/**
 	* The angle in radians of each ratchet position. Negative values cause the ratchet to operate in the opposite direction.
 	* @property ratchet
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 };
 
@@ -496,8 +496,8 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Ratchet, cp.RatchetJoint );
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -513,14 +513,14 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit = function( params ) {
 	* @property min
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 	/**
 	* The maximum angular delta of the joint in radians.
 	* @property max
 	* @type Number
 	* @public
-	*/ 
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit, cp.RotaryLimitJoint );
@@ -534,18 +534,18 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.RotaryLimit, cp.RotaryLimitJoin
 * @extends cp.Constraint
 * @constructor
 * @param params {Object}
-* 	@param params.bodyA {Kiwi.Plugins.ChipmunkPhysics.Body} The first physics body that this joint is to be attached to.
-* 	@param params.bodyB {Kiwi.Plugins.ChipmunkPhysics.Body} The second physics body that this joint is to be attached to. 
-* 	@param params.rate {Number} The relative rotation speed of the two bodies in radians per second.
-* 	@param [params.maxForce] {Number} 
-* 	@param [params.errorBias] {Number} 
-* 	@param [params.maxBias] {Number} 
+*	@param params.bodyA {Kiwi.Plugins.ChipmunkPhysics.Body} The first physics body that this joint is to be attached to.
+*	@param params.bodyB {Kiwi.Plugins.ChipmunkPhysics.Body} The second physics body that this joint is to be attached to. 
+*	@param params.rate {Number} The relative rotation speed of the two bodies in radians per second.
+*	@param [params.maxForce] {Number} 
+*	@param [params.errorBias] {Number} 
+*	@param [params.maxBias] {Number} 
 * @public
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -563,7 +563,7 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor = function( params ) {
 	* @property rate
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 };
 
@@ -578,25 +578,25 @@ Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.SimpleMotor, cp.SimpleMotor );
 * @extends cp.Constraint
 * @constructor
 * @param params {Object}
-* 	@param params.bodyA {Kiwi.Plugins.ChipmunkPhysics.Body} The first physics body that this joint is to be attached to.
-* 	@param params.bodyB {Kiwi.Plugins.ChipmunkPhysics.Body} The second physics body that this joint is to be attached to. 
-* 	@param [params.anchorA] {Object} The anchor point on the first physics body. 
-* 		@param [params.anchorA.x=0] {Number} Location of the anchor point on the x-axis.  
-* 		@param [params.anchorA.y=0] {Number} Location of the anchor point on the y-axis.  
-* 	@param [params.anchorB] {Object} The anchor point on the second physics body. 
-* 		@param [params.anchorB.x=0] {Number} Location of the anchor point on the x-axis.
-* 		@param [params.anchorB.y=0] {Number} Location of the anchor point on the y-axis. 
-* 	@param [params.min=100] {Number} The minimum allowed distance between anchor points. 
-* 	@param [params.max=1] {Number} The maximum allowed distance between anchor points. 
-* 	@param [params.maxForce] {Number} 
-* 	@param [params.errorBias] {Number} 
-* 	@param [params.maxBias] {Number} 
+*	@param params.bodyA {Kiwi.Plugins.ChipmunkPhysics.Body} The first physics body that this joint is to be attached to.
+*	@param params.bodyB {Kiwi.Plugins.ChipmunkPhysics.Body} The second physics body that this joint is to be attached to. 
+*	@param [params.anchorA] {Object} The anchor point on the first physics body. 
+*		@param [params.anchorA.x=0] {Number} Location of the anchor point on the x-axis.  
+*		@param [params.anchorA.y=0] {Number} Location of the anchor point on the y-axis.  
+*	@param [params.anchorB] {Object} The anchor point on the second physics body. 
+*		@param [params.anchorB.x=0] {Number} Location of the anchor point on the x-axis.
+*		@param [params.anchorB.y=0] {Number} Location of the anchor point on the y-axis. 
+*	@param [params.min=100] {Number} The minimum allowed distance between anchor points. 
+*	@param [params.max=1] {Number} The maximum allowed distance between anchor points. 
+*	@param [params.maxForce] {Number} 
+*	@param [params.errorBias] {Number} 
+*	@param [params.maxBias] {Number} 
 * @public
 */
 Kiwi.Plugins.ChipmunkPhysics.Joints.Slide = function( params ) {
 
-	if( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
-		console.error('You need to pass two bodies. bodyA & bodyB.');
+	if ( !(params.bodyA || params.a) || !(params.bodyB || params.b) ) {
+		console.error("You need to pass two bodies. bodyA & bodyB.");
 		return;
 	}
 
@@ -623,28 +623,28 @@ Kiwi.Plugins.ChipmunkPhysics.Joints.Slide = function( params ) {
 	* @property anchr1
 	* @type Object
 	* @public
-	*/ 	
+	*/
 
 	/**
 	* The anchor point on the second body.
 	* @property anchr2
 	* @type Object
 	* @public
-	*/ 	
+	*/
 	
 	/**
 	* The minimum angular delta of the joint in radians. 
 	* @property min
 	* @type Number
 	* @public
-	*/ 
+	*/
 
 	/**
 	* The maximum angular delta of the joint in radians.
 	* @property max
 	* @type Number
 	* @public
-	*/ 
+	*/
 };
 
 Kiwi.extend( Kiwi.Plugins.ChipmunkPhysics.Joints.Slide, cp.SlideJoint );
