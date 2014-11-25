@@ -3,7 +3,7 @@ Chipmunk Physics Plugin for Kiwi.JS - 0.8.0
 
 ##Description:
 
-This plugin helps to bring the advanced rigid body physics of [Chipmunk](chipmunk-physics.net) into Kiwi.
+This plugin helps to bring the advanced rigid body physics of [Chipmunk](http://chipmunk-physics.net) into Kiwi.
 
 The plugin uses the [JavaScript port of Chipmunk Physics Library](https://github.com/josephg/Chipmunk-js). Many thanks to all the [contributors](https://github.com/josephg/Chipmunk-js/graphs/contributors) who made the port possible!
  
@@ -47,7 +47,7 @@ Just make sure if you are wanting to use other plugins that you pass their names
 
 Your game should now have access to the plugin. 
 
-###Including the Debug:
+###Including the Debug Plugin:
 To include the debug portion of the plugin as well you will need to copy and include a few more files.
 
 Firstly make a copy of and link to the following files:
