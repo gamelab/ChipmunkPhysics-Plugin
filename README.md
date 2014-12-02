@@ -1,4 +1,4 @@
-Chipmunk Physics Plugin for Kiwi.JS - 0.8.0
+Chipmunk Physics Plugin - 0.8.0
 =======================================
 
 ##Description:
